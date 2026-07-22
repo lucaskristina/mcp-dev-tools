@@ -90,7 +90,7 @@ export function registerFileTools(server) {
         'Get metadata about a file or directory',
         { path: z.string().describe('File or directory path') },
         toolHandler('file_info', async ({ path: filePath }) => {
-            const { valid, reason, normalized } = validateFilePath(filePath);
+            const { valid, reason, normalized } = validateFilePath(filePath.replace(/[/\\]+$/, ''));
             if (!valid) return { content: [{ type: 'text', text: `Validation error: ${reason}` }], isError: true };
 
             const stat = await fs.stat(normalized);
