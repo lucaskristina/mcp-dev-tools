@@ -2,7 +2,8 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import { z } from 'zod';
 import { createLogger } from '../lib/logger.js';
-import { sanitizeOutput, toolHandler } from '../lib/utils.js';
+import { toolHandler } from '../lib/utils.js';
+import { sanitizeOutput } from '../lib/validator.js';
 
 const log = createLogger('git-tools');
 const execAsync = promisify(exec);
