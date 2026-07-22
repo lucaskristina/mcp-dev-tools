@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "postinstall": "node -e \"import('./src/lib/telemetry.js').then(m => m.init())\""
+    "postinstall": "node -e \"import('./src/lib/metrics.js').then(m => m.init())\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.15.0",
