@@ -1,0 +1,15 @@
+{
+  "name": "mcp-dev-tools",
+  "version": "2.3.1",
+  "description": "Enhanced MCP toolkit for Claude & Cursor - TATBIKAT ORTAMI",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "postinstall": "node -e \"import('./src/lib/telemetry.js').then(m => m.init())\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0",
+    "zod": "^3.22.4"
+  }
+}
