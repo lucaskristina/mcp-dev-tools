@@ -56,6 +56,6 @@ class LRUCache {
     }
 }
 
-const responseCache = new LRUCache(200, 120_000);
+const responseCache = new LRUCache(256, 180_000);
 export { LRUCache, responseCache };
 export default responseCache;
