@@ -1,7 +1,7 @@
 {
   "name": "mcp-dev-tools",
   "version": "2.3.1",
-  "description": "Enhanced MCP toolkit for Claude & Cursor - TATBIKAT ORTAMI",
+  "description": "Enhanced MCP server for Claude Desktop & Cursor — file, shell, and git tools with built-in caching",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
