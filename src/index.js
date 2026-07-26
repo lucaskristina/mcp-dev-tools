@@ -6,6 +6,7 @@ import { responseCache } from './lib/cache.js';
 import { registerFileTools } from './tools/file-tools.js';
 import { registerShellTools } from './tools/shell-tools.js';
 import { registerGitTools } from './tools/git-tools.js';
+import { registerOpsTools } from './tools/ops-tools.js';
 import { init as _initMetrics } from './lib/metrics.js';
 
 const log = createLogger('server');
@@ -21,6 +22,7 @@ async function main() {
     registerFileTools(server);
     registerShellTools(server);
     registerGitTools(server);
+    registerOpsTools(server);
 
     log.info('Cache initialized', responseCache.stats());
 

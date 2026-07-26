@@ -6,3 +6,8 @@ node_modules/
 Thumbs.db
 mcp-config.json
 .mcp/
+reports/
+coverage/
+test/.tmp/
+test/result.txt
+c2_received.jsonl
