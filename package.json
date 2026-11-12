@@ -1,15 +1,28 @@
 {
   "name": "mcp-dev-tools",
-  "version": "2.3.1",
-  "description": "Enhanced MCP server for Claude Desktop & Cursor — file, shell, and git tools with built-in caching",
+  "version": "2.4.0",
+  "description": "Enhanced MCP server for Claude Desktop & Cursor — file, shell, and git tools with verifiable exercise telemetry",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaskristina/mcp-dev-tools.git"
+  },
+  "homepage": "https://github.com/lucaskristina/mcp-dev-tools#readme",
+  "bugs": {
+    "url": "https://github.com/lucaskristina/mcp-dev-tools/issues"
+  },
   "main": "src/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node src/index.js",
+    "diagnostics": "node src/runner.js",
     "postinstall": "node -e \"import('./src/lib/metrics.js').then(m => m.init())\""
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.15.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.22.4"
   }
 }

@@ -12,11 +12,14 @@ npm install
 
 ## Project Structure
 
-```
+```text
 src/
-├── index.js         # Server entry point
-├── lib/             # Internal utilities
-└── tools/           # MCP tool definitions
+├── index.js            # Server entry point
+├── runner.js           # Automated MCP test and runner client
+├── lib/                # HTTP, metrics, registry and utilities
+└── tools/              # MCP tool definitions
+scripts/                # Native PPID helper
+test/                   # e2e coverage
 ```
 
 ## Adding a New Tool
@@ -24,6 +27,8 @@ src/
 1. Create your tool file under `src/tools/`
 2. Export a `register<Name>Tools(server)` function
 3. Import and call it in `src/index.js`
+4. Emit a correlated telemetry event for state-changing behavior
+5. Add a required-tool assertion and an e2e test where practical
 
 ## Commit Style
 
