@@ -7,7 +7,7 @@ const log = createLogger('config');
 const DEFAULTS = {
     server: {
         name: 'mcp-dev-tools',
-        version: '2.3.1',
+        version: '2.4.0',
         maxConcurrentRequests: 10,
         requestTimeoutMs: 30000,
     },
